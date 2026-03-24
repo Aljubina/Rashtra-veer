@@ -120,7 +120,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                               final genderField =
                                   DropdownButtonFormField<String>(
-                                    value: _selectedGender,
+                                    initialValue: _selectedGender,
                                     decoration: InputDecoration(
                                       labelText: 'Gender',
                                       prefixIcon: const Icon(
@@ -187,7 +187,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           const SizedBox(height: 16),
 
                           DropdownButtonFormField<String>(
-                            value: _selectedBloodGroup,
+                            initialValue: _selectedBloodGroup,
                             decoration: InputDecoration(
                               labelText: 'Blood Group',
                               prefixIcon: const Icon(Icons.bloodtype_outlined),
