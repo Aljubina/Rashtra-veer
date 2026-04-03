@@ -296,8 +296,8 @@ keytool -list -v -alias androiddebugkey -keystore ~/.android/debug.keystore -sto
 ### Overview
 
 - **Total Screens:** 28
-- **Completed:** 11
-- **Pending:** 17
+- **Completed:** 12
+- **Pending:** 13
 
 ---
 
@@ -322,6 +322,7 @@ keytool -list -v -alias androiddebugkey -keystore ~/.android/debug.keystore -sto
 ### Main Application
 
 - [x] Home Dashboard
+- [x] Leaderboard Screen
 
 ---
 
@@ -330,7 +331,6 @@ keytool -list -v -alias androiddebugkey -keystore ~/.android/debug.keystore -sto
 ### Main Application (Core Navigation)
 
 - [ ] Activity Screen
-- [ ] Leaderboard Screen
 - [ ] Chat Home Screen
 - [ ] Messaging Screen
 - [ ] Resources Screen
