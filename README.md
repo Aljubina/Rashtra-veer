@@ -295,7 +295,7 @@ keytool -list -v -alias androiddebugkey -keystore ~/.android/debug.keystore -sto
 
 ### Overview
 
-- **Total Screens:** 40
+- **Total Screens:** 30
 - **Completed:** 12
 - **Pending:** 18
 
