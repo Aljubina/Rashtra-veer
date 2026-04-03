@@ -291,6 +291,85 @@ Share your SHA-1 with admin:
 keytool -list -v -alias androiddebugkey -keystore ~/.android/debug.keystore -storepass android -keypass android
 ```
 
+## Screens Development Status
+
+### Overview
+
+- **Total Screens:** 28
+- **Completed:** 11
+- **Pending:** 17
+
+---
+
+## Completed Screens
+
+### Authentication
+
+- [x] Splash Screen
+- [x] Login Screen
+- [x] Register Screen
+- [x] OTP Verification Screen
+
+### Onboarding
+
+- [x] BMI Calculator
+- [x] Medical Condition Selection
+- [x] Goal Selection
+- [x] Routine Details
+- [x] Preferences / Workout Selection
+- [x] Subscription Plan Selection
+
+### Main Application
+
+- [x] Home Dashboard
+
+---
+
+## Pending Screens
+
+### Main Application (Core Navigation)
+
+- [ ] Activity Screen
+- [ ] Leaderboard Screen
+- [ ] Chat Home Screen
+- [ ] Messaging Screen
+- [ ] Resources Screen
+
+### Home Module
+
+- [ ] Task Details Screen
+- [ ] Progress / Streak Details Screen
+
+### Activity Module
+
+- [ ] Activity Tracking (Live GPS)
+- [ ] Activity Summary Screen
+
+### Content Module
+
+- [ ] Video Library Screen
+- [ ] Video Player Screen
+
+### Chat Module
+
+- [ ] Chat Conversation Screen
+
+### Community Module
+
+- [ ] Group List Screen
+- [ ] Create Group Screen
+
+### Gamification
+
+- [ ] Badges / Achievements Screen
+
+### Profile & Settings
+
+- [ ] Edit Profile Screen
+- [ ] Subscription / Payment Screen
+- [ ] Certificate Upload / View Screen
+- [ ] Settings Screen
+
 ## Git Workflow
 
 ```text
