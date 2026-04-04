@@ -41,7 +41,6 @@ class LeaderboardScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: _buildBottomNavBar(context),
     );
   }
 
@@ -369,58 +368,6 @@ class LeaderboardScreen extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-
-  Widget _buildBottomNavBar(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.06),
-            blurRadius: 8,
-            offset: const Offset(0, -2),
-          ),
-        ],
-      ),
-      child: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              _buildNavItem(Icons.home_outlined, 'Home', false),
-              _buildNavItem(Icons.directions_run_outlined, 'Activity', false),
-              _buildNavItem(Icons.play_circle_outline, 'Resources', false),
-              _buildNavItem(Icons.chat_bubble_outline, 'Chat', false),
-              _buildNavItem(Icons.bar_chart, 'Rank', true),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildNavItem(IconData icon, String label, bool isSelected) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Icon(
-          icon,
-          size: 24,
-          color: isSelected ? _violetPrimary : Colors.grey[600],
-        ),
-        const SizedBox(height: 4),
-        Text(
-          label,
-          style: TextStyle(
-            fontSize: 12,
-            fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
-            color: isSelected ? _violetPrimary : Colors.grey[600],
-          ),
-        ),
-      ],
     );
   }
 }

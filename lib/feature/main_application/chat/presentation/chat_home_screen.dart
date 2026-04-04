@@ -1,22 +1,14 @@
 import 'package:flutter/material.dart';
 
-import '../../home/presentation/widgets/home_bottom_nav_bar.dart';
 import 'widgets/chat_list_item.dart';
 
-class ChatHomeScreen extends StatefulWidget {
+class ChatHomeScreen extends StatelessWidget {
   const ChatHomeScreen({super.key});
 
-  @override
-  State<ChatHomeScreen> createState() => _ChatHomeScreenState();
-}
-
-class _ChatHomeScreenState extends State<ChatHomeScreen> {
   static const Color _screenBg = Color(0xFFFAFAF8);
   static const Color _surfaceMuted = Color(0xFFF3F3F6);
 
-  HomeNavTab _currentTab = HomeNavTab.chat;
-
-  final List<_ChatPreview> _chats = const [
+  static const List<_ChatPreview> _chats = [
     _ChatPreview(
       name: 'Coach Vikram Singh',
       message: 'Your macro ratios look perfect today.',
@@ -55,96 +47,91 @@ class _ChatHomeScreenState extends State<ChatHomeScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final titleStyle = theme.textTheme.headlineSmall?.copyWith(
-      fontWeight: FontWeight.w700,
-      color: const Color(0xFF21212E),
-    );
 
     return Scaffold(
       backgroundColor: _screenBg,
-      body: SafeArea(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 16, 20, 10),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Text('Chats', style: titleStyle),
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.search_rounded),
-                    color: Colors.black87,
-                    tooltip: 'Search',
+
+      // ✅ CORRECT PLACE
+      appBar: AppBar(
+        backgroundColor: _screenBg,
+        elevation: 0,
+        scrolledUnderElevation: 0,
+        title: Text(
+          'Chats',
+          style: theme.textTheme.headlineSmall?.copyWith(
+            fontWeight: FontWeight.w700,
+            color: const Color(0xFF21212E),
+          ),
+        ),
+        centerTitle: false,
+      ),
+
+      // ❌ Removed SafeArea (AppBar handles it)
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Container(
+              height: 48,
+              decoration: BoxDecoration(
+                color: _surfaceMuted,
+                borderRadius: BorderRadius.circular(24),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.04),
+                    blurRadius: 8,
+                    offset: const Offset(0, 2),
                   ),
                 ],
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Container(
-                height: 48,
-                decoration: BoxDecoration(
-                  color: _surfaceMuted,
-                  borderRadius: BorderRadius.circular(24),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.04),
-                      blurRadius: 8,
-                      offset: const Offset(0, 2),
-                    ),
-                  ],
-                ),
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hintText: 'Search experts...',
-                    hintStyle: theme.textTheme.bodyMedium?.copyWith(
-                      color: Colors.black45,
-                    ),
-                    prefixIcon: const Icon(
-                      Icons.search_rounded,
-                      color: Colors.black38,
-                    ),
-                    contentPadding: const EdgeInsets.symmetric(vertical: 14),
+              child: TextField(
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: 'Search experts...',
+                  hintStyle: theme.textTheme.bodyMedium?.copyWith(
+                    color: Colors.black45,
                   ),
+                  prefixIcon: const Icon(
+                    Icons.search_rounded,
+                    color: Colors.black38,
+                  ),
+                  contentPadding:
+                      const EdgeInsets.symmetric(vertical: 14),
                 ),
               ),
             ),
-            const SizedBox(height: 14),
-            Expanded(
-              child: ListView.builder(
-                padding: const EdgeInsets.fromLTRB(20, 8, 20, 20),
-                itemCount: _chats.length,
-                itemBuilder: (context, index) {
-                  final item = _chats[index];
-                  return Padding(
-                    padding: const EdgeInsets.only(bottom: 12),
-                    child: ChatListItem(
-                      name: item.name,
-                      lastMessage: item.message,
-                      timeLabel: item.timeLabel,
-                      unreadCount: item.unreadCount,
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) => ChatScreen(title: item.name),
-                          ),
-                        );
-                      },
-                    ),
-                  );
-                },
-              ),
+          ),
+
+          const SizedBox(height: 14),
+
+          Expanded(
+            child: ListView.builder(
+              padding: const EdgeInsets.fromLTRB(20, 8, 20, 20),
+              itemCount: _chats.length,
+              itemBuilder: (context, index) {
+                final item = _chats[index];
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 12),
+                  child: ChatListItem(
+                    name: item.name,
+                    lastMessage: item.message,
+                    timeLabel: item.timeLabel,
+                    unreadCount: item.unreadCount,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) =>
+                              ChatScreen(title: item.name),
+                        ),
+                      );
+                    },
+                  ),
+                );
+              },
             ),
-          ],
-        ),
-      ),
-      bottomNavigationBar: HomeBottomNavBar(
-        currentTab: _currentTab,
-        onTabSelected: (tab) => setState(() => _currentTab = tab),
+          ),
+        ],
       ),
     );
   }

@@ -12,10 +12,7 @@ import 'package:rashtraveer/feature/onboarding/presentation/on_boarding_screen4.
 import 'package:rashtraveer/feature/onboarding/presentation/on_boarding_screen5.dart';
 import 'package:rashtraveer/feature/onboarding/presentation/on_boarding_screen6.dart';
 
-// Main Application Screens
-import 'package:rashtraveer/feature/main_application/home/presentation/home_screen.dart';
-import 'package:rashtraveer/feature/main_application/leaderboard/presentation/leaderboard_screen.dart';
-import 'package:rashtraveer/feature/main_application/chat/presentation/chat_home_screen.dart';
+import 'package:rashtraveer/feature/main_application/main_app_screen.dart';
 
 import 'firebase_options.dart';
 
@@ -52,10 +49,7 @@ class MyApp extends StatelessWidget {
         OnBoardingScreen5.routeName: (context) => const OnBoardingScreen5(),
         OnBoardingScreen6.routeName: (context) => const OnBoardingScreen6(),
 
-        HomeScreen.routeName: (context) => const HomeScreen(),
-        ChatHomeScreen.routeName: (context) => const ChatHomeScreen(),
-        LeaderboardScreen.routeName: (context) =>
-            const LeaderboardScreen(),
+        MainAppScreen.routeName: (context) => const MainAppScreen(),
       },
     );
   }
