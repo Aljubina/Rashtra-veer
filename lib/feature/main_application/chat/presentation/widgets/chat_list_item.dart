@@ -122,8 +122,10 @@ class ChatListItem extends StatelessWidget {
   }
 
   String _initialsFromName(String value) {
-    final parts =
-        value.trim().split(RegExp(r'\s+')).where((part) => part.isNotEmpty);
+    final parts = value
+        .trim()
+        .split(RegExp(r'\s+'))
+        .where((part) => part.isNotEmpty);
     final initials = parts.take(2).map((part) => part[0]).join();
     return initials.isEmpty ? '?' : initials.toUpperCase();
   }

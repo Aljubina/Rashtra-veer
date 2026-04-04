@@ -95,8 +95,7 @@ class ChatHomeScreen extends StatelessWidget {
                     Icons.search_rounded,
                     color: Colors.black38,
                   ),
-                  contentPadding:
-                      const EdgeInsets.symmetric(vertical: 14),
+                  contentPadding: const EdgeInsets.symmetric(vertical: 14),
                 ),
               ),
             ),
@@ -121,8 +120,7 @@ class ChatHomeScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (_) =>
-                              ChatScreen(title: item.name),
+                          builder: (_) => ChatScreen(title: item.name),
                         ),
                       );
                     },

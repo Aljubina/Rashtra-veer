@@ -97,7 +97,11 @@ class LeaderboardScreen extends StatelessWidget {
             ],
           ),
         ),
-        Icon(Icons.more_horiz, color: Colors.white.withValues(alpha: 0.9), size: 24),
+        Icon(
+          Icons.more_horiz,
+          color: Colors.white.withValues(alpha: 0.9),
+          size: 24,
+        ),
       ],
     );
   }
@@ -169,10 +173,7 @@ class LeaderboardScreen extends StatelessWidget {
             ),
             Text(
               'Leaderboard Rank',
-              style: TextStyle(
-                fontSize: 12,
-                color: _violetLight,
-              ),
+              style: TextStyle(fontSize: 12, color: _violetLight),
             ),
           ],
         ),
@@ -200,10 +201,7 @@ class LeaderboardScreen extends StatelessWidget {
                 const SizedBox(width: 8),
                 Text(
                   'Daily Streak',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.grey[700],
-                  ),
+                  style: TextStyle(fontSize: 16, color: Colors.grey[700]),
                 ),
               ],
             ),
@@ -248,10 +246,7 @@ class LeaderboardScreen extends StatelessWidget {
                   const SizedBox(width: 8),
                   Text(
                     'Challenges Completed',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.grey[700],
-                    ),
+                    style: TextStyle(fontSize: 16, color: Colors.grey[700]),
                   ),
                 ],
               ),
@@ -266,10 +261,7 @@ class LeaderboardScreen extends StatelessWidget {
               ),
               Text(
                 'Challenge Progress',
-                style: TextStyle(
-                  fontSize: 12,
-                  color: _violetLight,
-                ),
+                style: TextStyle(fontSize: 12, color: _violetLight),
               ),
             ],
           ),
@@ -315,10 +307,7 @@ class LeaderboardScreen extends StatelessWidget {
             const SizedBox(width: 8),
             Text(
               'Total Points:',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.grey[700],
-              ),
+              style: TextStyle(fontSize: 16, color: Colors.grey[700]),
             ),
           ],
         ),

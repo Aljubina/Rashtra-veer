@@ -30,10 +30,7 @@ class _MainAppScreenState extends State<MainAppScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(
-        index: _selectedIndex,
-        children: _pages,
-      ),
+      body: IndexedStack(index: _selectedIndex, children: _pages),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: (index) => setState(() => _selectedIndex = index),
@@ -41,10 +38,7 @@ class _MainAppScreenState extends State<MainAppScreen> {
         selectedItemColor: _primaryColor,
         unselectedItemColor: Colors.grey,
         items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
             icon: Icon(Icons.directions_run),
             label: 'Activity',
@@ -53,10 +47,7 @@ class _MainAppScreenState extends State<MainAppScreen> {
             icon: Icon(Icons.menu_book),
             label: 'Resources',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
-            label: 'Chat',
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Chat'),
           BottomNavigationBarItem(
             icon: Icon(Icons.emoji_events),
             label: 'Rank',
@@ -76,10 +67,7 @@ class ActivityScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFFAFAF8),
       body: Center(
-        child: Text(
-          'Activity',
-          style: Theme.of(context).textTheme.titleLarge,
-        ),
+        child: Text('Activity', style: Theme.of(context).textTheme.titleLarge),
       ),
     );
   }
@@ -94,10 +82,7 @@ class ResourcesScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFFAFAF8),
       body: Center(
-        child: Text(
-          'Resources',
-          style: Theme.of(context).textTheme.titleLarge,
-        ),
+        child: Text('Resources', style: Theme.of(context).textTheme.titleLarge),
       ),
     );
   }

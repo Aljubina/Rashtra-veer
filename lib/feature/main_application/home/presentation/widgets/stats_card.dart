@@ -2,11 +2,7 @@ import 'package:flutter/material.dart';
 
 /// Stats card showing longest streak and points.
 class StatsCard extends StatelessWidget {
-  const StatsCard({
-    super.key,
-    this.longestStreak = 7,
-    this.points = 960,
-  });
+  const StatsCard({super.key, this.longestStreak = 7, this.points = 960});
 
   final int longestStreak;
   final int points;
