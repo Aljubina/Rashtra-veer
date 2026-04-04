@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../home/presentation/widgets/home_bottom_nav_bar.dart';
+import 'chat_screen.dart';
 import 'widgets/chat_list_item.dart';
 
 class ChatHomeScreen extends StatefulWidget {
@@ -162,32 +163,4 @@ class _ChatPreview {
   final String message;
   final String timeLabel;
   final int unreadCount;
-}
-
-class ChatScreen extends StatelessWidget {
-  const ChatScreen({super.key, required this.title});
-
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          title,
-          style: theme.textTheme.titleLarge?.copyWith(
-            fontWeight: FontWeight.w700,
-          ),
-        ),
-      ),
-      body: Center(
-        child: Text(
-          'Chat screen placeholder',
-          style: theme.textTheme.bodyLarge,
-        ),
-      ),
-    );
-  }
 }
